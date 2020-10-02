@@ -75,5 +75,10 @@ function cardMaker(object) {
     authorContainer.appendChild(authorName);
     imgContainer.appendChild(img);
 
+    //Add event listener to the card
+    cardContainer.addEventListener('click', e => {
+        console.log(headline.textContent);
+    });
+
     return cardContainer
 }
