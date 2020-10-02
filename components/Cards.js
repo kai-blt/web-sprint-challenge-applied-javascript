@@ -38,7 +38,7 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
         
         //Iterate over articlesArray, pass object to cardMaker and append to DOM
         articlesArray.forEach(arr => {
-           arr.forEach(item => {
+           arr.forEach((item) => {
                 cardsContainer.appendChild(cardMaker(item))}
             );
         })
