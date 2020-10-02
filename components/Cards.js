@@ -44,7 +44,8 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
         })
     })
     .catch(err => {
-        return `Oops we're sorry we had an error: ${err}`
+        let errContainer = document.querySelector('.errors-container')
+        errContainer.appendChild(errorMaker(err));
     })
 
 
@@ -83,4 +84,24 @@ function cardMaker(object) {
     return cardContainer
 }
 
-export default cardMaker
+
+function errorMaker(error) {
+    //Create Elements
+    let errorContainer = document.createElement('div');
+    let errorMessage = document.createElement('h1');
+
+
+    errorMessage.style.color = '#DC143C';
+    errorMessage.style.fontSize = '1.5rem';
+    //Add data
+    errorMessage.textContent = `Sorry... we aren't able to fetch any articles for you
+    right now, but we're working on it! ${error}`;
+   
+    //Build Component
+    errorContainer.appendChild(errorMessage);
+
+    return errorContainer
+}
+
+
+
