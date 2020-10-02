@@ -36,7 +36,7 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
         //Add objects to array to iterate over
         let articlesArray = [bootstrapArticles, javascriptArticles, jqueryArticles, nodeArticles, techArticles];
         
-        //Build card and append to DOM
+        //Iterate over articlesArray, pass object to cardMaker and append to DOM
         articlesArray.forEach(arr => {
            arr.forEach(item => {
                 cardsContainer.appendChild(cardMaker(item))}
@@ -65,7 +65,7 @@ function cardMaker(object) {
 
     //Add data
     headline.textContent = object["headline"];
-    img.textContent = object["authorPhoto"];
+    img.src = object["authorPhoto"];
     authorName.textContent = object["authorName"];
    
     //Build Component
