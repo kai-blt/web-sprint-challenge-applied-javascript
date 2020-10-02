@@ -82,3 +82,5 @@ function cardMaker(object) {
 
     return cardContainer
 }
+
+export default cardMaker

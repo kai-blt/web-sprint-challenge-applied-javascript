@@ -9,6 +9,7 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+// import cardMaker from './Cards'
 
 
 
@@ -23,9 +24,16 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             let tab = document.createElement('div');
             tab.classList.add('tab');
             tab.textContent = topic;
+
+            //On click, console.log tabs textContent
+            tab.addEventListener('click', e => {
+                console.log(e.target.textContent);
+            });
             topicsSection.appendChild(tab);
         });        
     })
     .catch(err => {
         return `Oh no we didn't receive a response! ${err}`
     })
+
+
